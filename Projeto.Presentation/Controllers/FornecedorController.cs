@@ -18,6 +18,7 @@ namespace Projeto.Presentation.Controllers
         [HttpGet]
         public IActionResult Consulta([FromServices] IFuncionarioRepository repository, [FromServices] IMapper mapper)
         {
+            ///Teste
             try
             {
                 var lista = mapper.Map<List<FuncionarioEntity>>(repository.GetAll());
