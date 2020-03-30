@@ -6,7 +6,7 @@ using System.Text;
 namespace Projeto.Domain.Contracts.Services
 {
     public interface ISetorDomainService
-        : IBaseDomainService<SetorEntity>
+        : IBaseDomainService<ProdutoEntity>
     {
 
     }

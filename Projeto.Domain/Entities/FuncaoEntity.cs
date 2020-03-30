@@ -11,7 +11,7 @@ namespace Projeto.Domain.Entities
 
         #region Associações
 
-        public List<FuncionarioEntity> Funcionarios { get; set; }
+        public List<FornecedorEntity> Funcionarios { get; set; }
 
         #endregion
     }

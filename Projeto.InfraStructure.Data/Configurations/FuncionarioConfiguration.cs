@@ -8,25 +8,25 @@ using System.Text;
 namespace Projeto.InfraStructure.Data.Configurations
 {
     public class FuncionarioConfiguration
-        : IEntityTypeConfiguration<FuncionarioEntity>
+        //: IEntityTypeConfiguration<FornecedorEntity>
     {
-        public void Configure(EntityTypeBuilder<FuncionarioEntity> builder)
-        {
-            builder.HasKey(f => f.Id);
+        //public void Configure(EntityTypeBuilder<FornecedorEntity> builder)
+        //{
+        //    builder.HasKey(f => f.Id);
 
-            #region Relacionamentos
+        //    #region Relacionamentos
 
-            builder.HasOne(f => f.Setor)
-                .WithMany(s => s.Funcionarios)
-                .HasForeignKey(f => f.IdSetor)
-                .OnDelete(DeleteBehavior.Restrict);
+        //    builder.HasOne(f => f.Setor)
+        //        .WithMany(s => s.Funcionarios)
+        //        .HasForeignKey(f => f.IdSetor)
+        //        .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(f => f.Funcao)
-                .WithMany(f => f.Funcionarios)
-                .HasForeignKey(f => f.IdFuncao)
-                .OnDelete(DeleteBehavior.Restrict);
+        //    builder.HasOne(f => f.Funcao)
+        //        .WithMany(f => f.Funcionarios)
+        //        .HasForeignKey(f => f.IdFuncao)
+        //        .OnDelete(DeleteBehavior.Restrict);
 
-            #endregion
-        }
+        //    #endregion
+        //}
     }
 }

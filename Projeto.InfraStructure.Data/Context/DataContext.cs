@@ -15,13 +15,13 @@ namespace Projeto.InfraStructure.Data.Context
         {
             //adicionar cada classe de mapeamento (ORM)
             modelBuilder.ApplyConfiguration(new FuncaoConfiguration());
-            modelBuilder.ApplyConfiguration(new SetorConfiguration());
-            modelBuilder.ApplyConfiguration(new FuncionarioConfiguration());
+            //modelBuilder.ApplyConfiguration(new SetorConfiguration());
+            //modelBuilder.ApplyConfiguration(new FuncionarioConfiguration());
         }
 
         //REGRA 3) Declarar um DbSet para cada entidade (LAMBDA)
         public DbSet<FuncaoEntity> Funcao { get; set; }
-        public DbSet<SetorEntity> Setor { get; set; }
-        public DbSet<FuncionarioEntity> Funcionario { get; set; }
+        public DbSet<ProdutoEntity> Setor { get; set; }
+        public DbSet<FornecedorEntity> Funcionario { get; set; }
     }
 }

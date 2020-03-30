@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Projeto.Domain.Contracts.Repositories
 {
-    public interface IFuncionarioRepository
-        : IBaseRepository<FuncionarioEntity>
+    public interface IProdutoRepository
+        : IBaseRepository<ProdutoEntity>
     {
 
     }

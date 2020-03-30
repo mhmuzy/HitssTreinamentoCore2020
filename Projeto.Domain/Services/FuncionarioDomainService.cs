@@ -8,14 +8,14 @@ using System.Text;
 namespace Projeto.Domain.Services
 {
     public class FuncionarioDomainService
-        : BaseDomainService<FuncionarioEntity>, IFuncionarioDomainService
+        //: BaseDomainService<FornecedorEntity>, IFuncionarioDomainService
     {
-        private readonly IFuncionarioRepository repository;
+        //private readonly IFuncionarioRepository repository;
 
-        public FuncionarioDomainService(IFuncionarioRepository repository)
-            : base(repository)
-        {
-            this.repository = repository;
-        }
+        //public FuncionarioDomainService(IFuncionarioRepository repository)
+        //    : base(repository)
+        //{
+        //    this.repository = repository;
+        //}
     }
 }

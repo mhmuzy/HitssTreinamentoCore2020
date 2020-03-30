@@ -16,12 +16,12 @@ namespace Projeto.Presentation.Controllers
     public class FornecedorController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Consulta([FromServices] IFuncionarioRepository repository, [FromServices] IMapper mapper)
+        public IActionResult Consulta([FromServices] IFornecedorRepository repository, [FromServices] IMapper mapper)
         {
-            ///Teste
+            
             try
             {
-                var lista = mapper.Map<List<FuncionarioEntity>>(repository.GetAll());
+                var lista = mapper.Map<List<FornecedorEntity>>(repository.GetAll());
 
                 return Ok(lista);
             }
@@ -33,16 +33,16 @@ namespace Projeto.Presentation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastro(TesteModel model, [FromServices] IFuncionarioRepository repository, [FromServices] IMapper mapper)
+        public IActionResult Cadastro(FornecedorCadastroModel model, [FromServices] IFornecedorRepository repository, [FromServices] IMapper mapper)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var funcionario = mapper.Map<FuncionarioEntity>(model);
-                    repository.Insert(funcionario);
+                    var forncedor = mapper.Map<FornecedorEntity>(model);
+                    repository.Insert(forncedor);
 
-                    return Ok("Deu Certo!");
+                    return Ok("Fornecedor cadastrado com sucesso!");
                 }
                 catch (Exception e)
                 {
@@ -57,16 +57,16 @@ namespace Projeto.Presentation.Controllers
         }
 
         [HttpPut]
-        public IActionResult Alterar(TesteModel model, [FromServices] IFuncionarioRepository repository, [FromServices] IMapper mapper)
+        public IActionResult Alterar(FornecedorEdicaoModel model, [FromServices] IFornecedorRepository repository, [FromServices] IMapper mapper)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var funcionario = mapper.Map<FuncionarioEntity>(model);
-                    repository.Update(funcionario);
+                    var fornecedor = mapper.Map<FornecedorEntity>(model);
+                    repository.Update(fornecedor);
 
-                    return Ok("Deu Certo!");
+                    return Ok("Fornecedor cadastrado com sucesso!");
                 }
                 catch (Exception e)
                 {
@@ -81,14 +81,14 @@ namespace Projeto.Presentation.Controllers
         }
 
         [HttpDelete("Id")]
-        public IActionResult Delete(int id, [FromServices] IFuncaoRepository repository)
+        public IActionResult Delete(int id, [FromServices] IFornecedorRepository repository)
         {
             try
             {
-                var funcionario = repository.GetById(id);
-                repository.Delete(funcionario);
+                var fornecedor = repository.GetById(id);
+                repository.Delete(fornecedor);
 
-                return Ok("");
+                return Ok("Fornecedor excluído com sucesso!");
             }
             catch (Exception e)
             {
@@ -98,11 +98,11 @@ namespace Projeto.Presentation.Controllers
         }
 
         [HttpGet("Id")]
-        public IActionResult ConsultaId(int id, [FromServices] IFuncionarioRepository repository, [FromServices] IMapper mapper)
+        public IActionResult ConsultaId(int id, [FromServices] IFornecedorRepository repository, [FromServices] IMapper mapper)
         {
             try
             {
-                var model = mapper.Map<TesteModel>(repository.GetById(id));
+                var model = mapper.Map<FornecedorConsultaModel>(repository.GetById(id));
 
                 return Ok(model);
             }

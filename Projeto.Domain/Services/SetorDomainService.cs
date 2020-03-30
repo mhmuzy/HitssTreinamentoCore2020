@@ -8,11 +8,11 @@ using System.Text;
 namespace Projeto.Domain.Services
 {
     public class SetorDomainService
-        : BaseDomainService<SetorEntity>, ISetorDomainService
+        : BaseDomainService<ProdutoEntity>, ISetorDomainService
     {
-        private readonly ISetorRepository repository;
+        private readonly IProdutoRepository repository;
 
-        public SetorDomainService(ISetorRepository repository)
+        public SetorDomainService(IProdutoRepository repository)
             : base(repository)
         {
             this.repository = repository;

@@ -8,14 +8,14 @@ using System.Text;
 namespace Projeto.InfraStructure.Data.Repositories
 {
     public class FuncionarioRepository
-        : BaseRepository<FuncionarioEntity>, IFuncionarioRepository
+        //: BaseRepository<FornecedorEntity>, IFuncionarioRepository
     {
         //atributo
         private readonly DataContext context;
 
         //construtor para injeção de dependencia
         public FuncionarioRepository(DataContext context)
-            : base(context)
+            //: base(context)
         {
             this.context = context;
         }

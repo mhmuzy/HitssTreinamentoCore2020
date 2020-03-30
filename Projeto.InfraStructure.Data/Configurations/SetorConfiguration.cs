@@ -8,11 +8,11 @@ using System.Text;
 namespace Projeto.InfraStructure.Data.Configurations
 {
     public class SetorConfiguration
-        : IEntityTypeConfiguration<SetorEntity>
+        //: IEntityTypeConfiguration<ProdutoEntity>
     {
-        public void Configure(EntityTypeBuilder<SetorEntity> builder)
-        {
-            builder.HasKey(s => s.Id);
-        }
+        //public void Configure(EntityTypeBuilder<ProdutoEntity> builder)
+        //{
+        //    builder.HasKey(s => s.Id);
+        //}
     }
 }

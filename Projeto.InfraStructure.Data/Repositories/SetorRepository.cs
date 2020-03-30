@@ -8,7 +8,7 @@ using System.Text;
 namespace Projeto.InfraStructure.Data.Repositories
 {
     public class SetorRepository
-        : BaseRepository<SetorEntity>, ISetorRepository
+        : BaseRepository<ProdutoEntity>, IProdutoRepository
     {
         //atributo
         private readonly DataContext context;
