@@ -15,9 +15,8 @@ namespace Projeto.Domain.Entities
 
         #region Associações
 
-        //public FuncaoEntity Funcao { get; set; }
-        //public SetorEntity Setor { get; set; }
-
+        public ProdutoEntity Produto { get; set; }
+        
         #endregion
     }
 }

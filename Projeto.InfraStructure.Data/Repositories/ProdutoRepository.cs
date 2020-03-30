@@ -7,14 +7,14 @@ using System.Text;
 
 namespace Projeto.InfraStructure.Data.Repositories
 {
-    public class SetorRepository
+    public class ProdutoRepository
         : BaseRepository<ProdutoEntity>, IProdutoRepository
     {
         //atributo
         private readonly DataContext context;
 
         //construtor para injeção de dependencia
-        public SetorRepository(DataContext context)
+        public ProdutoRepository(DataContext context)
             : base(context)
         {
             this.context = context;

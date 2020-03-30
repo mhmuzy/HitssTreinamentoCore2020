@@ -7,15 +7,15 @@ using System.Text;
 
 namespace Projeto.InfraStructure.Data.Repositories
 {
-    public class FuncionarioRepository
-        //: BaseRepository<FornecedorEntity>, IFuncionarioRepository
+    public class FornecedorRepository
+        : BaseRepository<FornecedorEntity>, IFornecedorRepository
     {
         //atributo
         private readonly DataContext context;
 
         //construtor para injeção de dependencia
-        public FuncionarioRepository(DataContext context)
-            //: base(context)
+        public FornecedorRepository(DataContext context)
+            : base(context)
         {
             this.context = context;
         }

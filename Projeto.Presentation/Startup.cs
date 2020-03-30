@@ -35,7 +35,7 @@ namespace Projeto.Presentation
                        {
                            Title = "Hitss Treinamento",
                            Version = "v1",
-                           Description = "Aula de DDD - Domain Driven Design"
+                           Description = "Área de Treinamento do API Core"
                        });
                }
                );

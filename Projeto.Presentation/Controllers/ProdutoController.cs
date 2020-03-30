@@ -31,63 +31,63 @@ namespace Projeto.Presentation.Controllers
             }
         }
 
-        //[HttpPost]
-        //public IActionResult Cadastro(TesteModel model, [FromServices] IProdutoRepository repository, [FromServices] IMapper mapper)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            var produto = mapper.Map<FornecedorEntity>(model);
-        //            repository.Insert(funcionario);
+        [HttpPost]
+        public IActionResult Cadastro(ProdutoCadastroModel model, [FromServices] IProdutoRepository repository, [FromServices] IMapper mapper)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var produto = mapper.Map<ProdutoEntity>(model);
+                    repository.Insert(produto);
 
-        //            return Ok("Deu Certo!");
-        //        }
-        //        catch (Exception e)
-        //        {
+                    return Ok("Produto cadastrado com sucesso!");
+                }
+                catch (Exception e)
+                {
 
-        //            return StatusCode(500, e.Message);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return BadRequest();
-        //    }
-        //}
+                    return StatusCode(500, e.Message);
+                }
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
 
-        //[HttpPut]
-        //public IActionResult Alterar(TesteModel model, [FromServices] IProdutoRepository repository, [FromServices] IMapper mapper)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            var funcionario = mapper.Map<FornecedorEntity>(model);
-        //            repository.Update(funcionario);
+        [HttpPut]
+        public IActionResult Alterar(ProdutoEdicaoModel model, [FromServices] IProdutoRepository repository, [FromServices] IMapper mapper)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var produto = mapper.Map<ProdutoEntity>(model);
+                    repository.Update(produto);
 
-        //            return Ok("Deu Certo!");
-        //        }
-        //        catch (Exception e)
-        //        {
+                    return Ok("Produto editado com sucesso!");
+                }
+                catch (Exception e)
+                {
 
-        //            return StatusCode(500, e.Message);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return BadRequest();
-        //    }
-        //}
+                    return StatusCode(500, e.Message);
+                }
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
 
         [HttpDelete("Id")]
         public IActionResult Delete(int id, [FromServices] IProdutoRepository repository)
         {
             try
             {
-                var funcionario = repository.GetById(id);
-                repository.Delete(funcionario);
+                var produto = repository.GetById(id);
+                repository.Delete(produto);
 
-                return Ok("");
+                return Ok("Produto excluído com sucesso!");
             }
             catch (Exception e)
             {
@@ -96,20 +96,20 @@ namespace Projeto.Presentation.Controllers
             }
         }
 
-        //    [HttpGet("Id")]
-        //    public IActionResult ConsultaId(int id, [FromServices] IProdutoRepository repository, [FromServices] IMapper mapper)
-        //    {
-        //        try
-        //        {
-        //            var model = mapper.Map<TesteModel>(repository.GetById(id));
+        [HttpGet("Id")]
+        public IActionResult ConsultaId(int id, [FromServices] IProdutoRepository repository, [FromServices] IMapper mapper)
+        {
+            try
+            {
+                var model = mapper.Map<ProdutoConsultaModel>(repository.GetById(id));
 
-        //            return Ok(model);
-        //        }
-        //        catch (Exception e)
-        //        {
+                return Ok(model);
+            }
+            catch (Exception e)
+            {
 
-        //            return StatusCode(500, e.Message);
-        //        }    
-        //    }
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }

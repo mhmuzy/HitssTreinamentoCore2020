@@ -7,12 +7,12 @@ using System.Text;
 
 namespace Projeto.InfraStructure.Data.Configurations
 {
-    public class SetorConfiguration
-        //: IEntityTypeConfiguration<ProdutoEntity>
+    public class ProdutoConfiguration
+        : IEntityTypeConfiguration<ProdutoEntity>
     {
-        //public void Configure(EntityTypeBuilder<ProdutoEntity> builder)
-        //{
-        //    builder.HasKey(s => s.Id);
-        //}
+        public void Configure(EntityTypeBuilder<ProdutoEntity> builder)
+        {
+            builder.HasKey(s => s.IdProduto);
+        }
     }
 }

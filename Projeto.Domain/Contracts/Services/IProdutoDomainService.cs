@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Projeto.Domain.Contracts.Services
 {
-    public interface IFuncionarioDomainService
-        : IBaseDomainService<FornecedorEntity>
+    public interface IProdutoDomainService
+        : IBaseDomainService<ProdutoEntity>
     {
 
     }
